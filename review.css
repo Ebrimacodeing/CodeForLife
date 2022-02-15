@@ -1,0 +1,22 @@
+h1 {
+    background-color: none;
+background-color: none;
+text-align: center;
+color: white;
+}
+body {
+    background-image:url(photo.jpg) ;
+background-size: cover;
+}
+img {display: block;
+margin-left: auto;
+margin-right: auto;
+border: 10px solid gray;
+}
+h2 {
+    text-align: center;
+text-indent: 5.5;
+color: white;
+size: 5.5;
+text-shadow: 2px  white;
+}

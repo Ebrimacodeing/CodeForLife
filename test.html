@@ -1,0 +1,147 @@
+<script>
+    class InstructorAnimeCharacter {
+    constructor(name, hometown, superPower, weakness, health, powerLevel){
+        this.name = name;
+        this.hometown = hometown;
+        this.weakness = weakness;
+        this.health = health;
+        this.superPower = superPower;
+        this.powerLevel = powerLevel;
+        this.specialDamage = 50;
+    }
+    dodge(){
+    }
+    block(){
+    }
+    powerUp(){
+        if(this.powerLevel >= 96){
+            this.powerLevel = 100;
+            console.log(`${this.name} power level is full! Special Available!`);
+        }else{
+            this.powerLevel += 4;
+            console.log(`${this.name} power level is now at ${this.powerLevel}%`);
+        }
+    }
+    specialAttack(opponent){
+        // create a console.log explaining your attack and the amount of damage to an opponent...
+        if(this.powerLevel == 100){
+            console.log("Die Already!!! DRAGON BLITZ!!!!!");
+            this.powerLevel -= 40;
+            opponent.health -= this.specialDamage;
+            console.log(`${opponent.name}'s health has been depleted by ${this.specialDamage}! ${opponent.name} health: ${opponent.health}%`);
+        }else{
+            console.log(`Blaz's power level is currently at ${this.powerLevel}. Power up to full strength to unleash your special attack!!`)
+        }
+    }
+    //Create two more attacks each one being its on function
+    // 1. 20% damage
+    //2. 10% damage
+    superPunch(opponent){
+        opponent.health -= 20;
+        console.log(`You'll regret this decsion${opponent.name}: **** ${opponent.name}'s HEALTH: ${opponent.health}% ****`);
+    }
+    lightningbolt(opponent){
+        opponent.health -= 10;
+        console.log(`Feel the wrath of me ****${opponent.name}'s HEALTH: ${opponent.health}% **** `);
+    }
+    runRandom(opponent){
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        if(randomNumber <= 30){
+            this.specialAttack(opponent);
+            // opponent.runRandom(this);
+        }else if(randomNumber > 30 && randomNumber <= 70){
+            this.superPunch(opponent);
+            // opponent.runRandom(this);
+        }else{
+            // opponent.runRandom(this);
+            this.lightningbolt(opponent);
+        }
+    }
+}
+class StudenAnimeCharacter{
+    constructor(name,homeTown,power,weakness,health,level,specialAttack){
+        this.name = name;
+        this.homeTown = homeTown;
+        this.power = power;
+        this.weakness = weakness;
+        this.health = health;
+        this.level = level;
+        this.specialAttack = specialAttack;
+        this.specialDamage = 50;
+        this.stance = 'open';
+    }
+    dodge(opponent, attack){
+        this.stance = 'dodge';
+    }
+    powerUp(){
+        if(this.level >=96){
+            this.level = 100;
+            console.log(`${this.name} power levelis full! special Available`);
+        }else{
+            this.level += 4;
+            console.log(`${this.name} power level is now at ${this.level}%`);
+        }
+    }
+    cheackStance(opponent){
+        if(opponent.stance == "dodge"){
+        }else if (opponent.block){
+            return
+        }
+    }
+    special(opponent){
+        if(this.level == 100){
+            this.level -= 40;
+            opponent.health -= this.specialDamage;
+            console.log(`${this.name} has unleashed ${this.specialAttack}, ${opponent.name}'s health is ${opponent.health}`);
+        }else{
+            console.log(`${this.name} cant do that right now, your power level is at ${this.level}%`);
+        }
+    }
+    swapboltPunch(opponent){
+        opponent.health -= 20;
+        console.log(`This will take your code to minecraft${opponent.name}:. **** ${opponent.name}'s HEALTH: ${oppnent.health}% ****`)
+    }
+    titanProutch(opponent){
+        opponent.health -= 10;
+        console.log(`This will destroy ur computer${opponent.name}'s HEALTH: ${opponent.health}% ***`)
+    }
+    runRandom(opponent){
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        if(randomNumber <= 30){
+            this.special(opponent);
+        }else if(randomNumber > 30 && randomNumber <= 70){
+            this.swapboltPunch(opponent);
+        }else{
+            this.titanProutch(opponent);
+        }
+    }
+}
+let Oden = new StudenAnimeCharacter("Oden","Oden","Oden","Oden",100,100,"Oden");
+// let sungJinWoo = new StudenAnimeCharacter("Sung Jin-Woo", "Korea", "Shadow Monarch", "None", 100, 100, "Dominator Touch");
+// let aang = new AnimeCharacter2("Aang", "Air Nation", "All elements", "avatar state", 100, 100);
+let Mason = new InstructorAnimeCharacter("Mason", "Mason", "Mason", "Mason", 100, 100);
+let shikamaru = new InstructorAnimeCharacter("Shikamaru","Konohagakure","Shadow possesion","Lazyness",100,100);
+// let brainiac = new InstructorAnimeCharacter("Braniac", "No hometown", "intelligence, super strength", "pride", 100, 100);
+// console.log(staticShock);
+//staticShock.powerUp();
+//staticShock.specialAttack(brainiac);
+//staticShock.jabJolt(brainiac);
+//staticShock.shockWaveEmission(brainiac);
+// function used to run duel
+let roundNum = 0;
+let interval = setInterval(function(){
+    roundNum++;
+    console.log(`round ${roundNum}`);
+    //replace here with an instructor and student characters or students head to head
+    Mason.runRandom(Oden);
+    Oden.runRandom(Mason);
+    if(Mason.health <= 0  || Mason.health <= 0){
+        clearInterval(interval);
+    }
+ }, 3000);
+white_check_mark
+eyes
+raised_hands
+
+
+</script>

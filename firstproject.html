@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>
+            Wiz navigation
+        </title>
+    </head>
+<body>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: lightgreen;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: gray;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+letter-spacing: 10px;
+}
+
+li a:hover {
+  background-color: lightgreen ;
+}
+</style>
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">Updates</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+<style>
+    h1 {
+      margin: 0px;
+      padding: 0px;
+      font-size: 60px;
+    color: white;
+    text-shadow: 0 0 10px white;
+  }
+    .clock{
+      position: absolute;
+      top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 5px solid whitesmoke;
+    padding: 30px 60px;
+  }
+  body {
+    background-color:lightgreen;
+  }
+  </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="Clock">
+<h1>
+  <span id="hours">12</span>
+  <span>:</span>
+  <span id="minutes">60</span>
+  <span>:</span>
+  <span id="seconds">60</span>
+  <span id ="am_or_pm">AM</span>
+</h1>
+      </div>
+    </div>
+
+<script>
+  function autoTimeUpdate(){
+    var dateTime = new Date();
+  var hours = dateTime.getHours();
+  var minutes = dateTime.getMinutes();
+  var seconds = dateTime.getSeconds();
+  var am_or_pm = document.getElementById('am_or_pm')
+ if(hours >=12){
+  am_or_pm.innerHTML = "PM";
+ } else{
+  am_or_pm.innerHTML = "AM";
+ }
+ if(hours > 12){
+   hours = hours - 12
+ }
+  
+  document.getElementById('hours').innerHTML = hours;
+  document.getElementById('minutes').innerHTML = minutes;
+  document.getElementById('seconds').innerHTML = seconds;
+  }
+  //1000 for 1 seconds
+  setInterval(autoTimeUpdate,1000)
+
+
+
+
+</script>
+
+
+</html>
+        </body>
+   

@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>lesson 6</title>
+    </head>
+    <body>
+        <h2>Welcome to code</h2>
+        <p>A time based greeting :</p>
+        <p id="demo1"></p>
+       <script>
+let time = new Date().getHours(); // it tells us the time and the exact hour
+let greeting; // created a variable called greeting
+if (time < 10) { 
+    greeting = "Good morning"; // var greeting equals "good morning" if the var is passed the time
+}
+else if (time < 20) {
+    greeting = "Good afternoon"; // else if time <20 is going to be replaced with "good day"
+}
+else {
+    greeting = "Good evening"; // so if it doesnt  say good moring or good day its going to say "good evening'
+}
+document.getElementById("demo1").innerHTML = greeting; // locate id and display greetings and  tell us what time it is
+    let weather = "Rain" 
+if (weather === "Rain")  {
+    console.log("Wear a raincoat")
+}
+else if (weather === "snow") {
+    console.log("Wear a jacket")
+}
+else { weather === "sunny"  
+    console.log("wear jeans or shorts and a short sleeve shirt")
+}
+        </script>
+<body>
+</html>
